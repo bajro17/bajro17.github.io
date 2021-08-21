@@ -217,10 +217,17 @@
                       Work on many small and large projects.<br/>
                       In free time I love to draw nature.
                     </p>
-                    <input type="text" id="first">
-                    <input type="email" id="email">
-                    <textarea  id="text" cols="30" rows="10"></textarea>
-                    <button onclick="createIssue()"> Send</button>
+                    <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSftIoOnEJpbRJ0F6NGgGiBNApjRenrC-dUX9JVVivXNak_sRw/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+  First name:<br>
+  <input type="text" name="entry.1374816860" id="entry.1374816860"><br>
+  Email:<br>
+  <input type="text" name="entry.1327997679" id="entry.1327997679">
+  Text:<br>
+  <textarea name="entry.927585984" id="entry.927585984" cols="30" rows="10"></textarea>
+  <input type="submit" value="Submit">
+</form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
                     
                   </div>
                 </div>
@@ -383,15 +390,15 @@
       document.getElementById(collapseID).classList.toggle("block");
     }
 
-    function createIssue() {
-      firstName = document.getElementById("first").value;
-      email = document.getElementById("email").value;
-      text = document.getElementById("text").value;
-      text = text.replace(/\s/g, '+');
-      axios({
-        method: 'get',
-        url: `https://docs.google.com/forms/d/e/1FAIpQLSftIoOnEJpbRJ0F6NGgGiBNApjRenrC-dUX9JVVivXNak_sRw/viewform?usp=pp_url&entry.1374816860=${firstName}&entry.1327997679=${email}&entry.927585984=${text}`,
-    }).then((t) => {console.log(t)}).catch((err) => {console.log(err)});
-    }
+    // function createIssue() {
+    //   firstName = document.getElementById("first").value;
+    //   email = document.getElementById("email").value;
+    //   text = document.getElementById("text").value;
+    //   text = text.replace(/\s/g, '+');
+    //   axios({
+    //     method: 'get',
+    //     url: `&=${firstName}&=${email}&=${text}`,
+    // }).then((t) => {console.log(t)}).catch((err) => {console.log(err)});
+    // }
   </script>
 </html>
