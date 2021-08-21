@@ -217,6 +217,9 @@
                       Work on many small and large projects.<br/>
                       In free time I love to draw nature.
                     </p>
+                    <input type="text" id="first">
+                    <input type="email" id="email">
+                    <textarea  id="text" cols="30" rows="10"></textarea>
                     <button onclick="createIssue()"> Send</button>
                     
                   </div>
@@ -381,22 +384,14 @@
     }
 
     function createIssue() {
-      console.log("test")
+      firstName = document.getElementById("first");
+      email = document.getElementById("email");
+      text = document.getElementById("text");
+      text = text.replace(/\s/g, '+');
       axios({
-        method: 'post',
-        url: 'https://api.github.com/repos/bajro17/bajro17.github.io/issues',
-        data: {
-      title: "Found a bug",
-      body: "I'm having a problem with this.",
-      assignee: "octocat",
-      milestone: 1,
-      labels: [
-        "Label1",
-        "Label2"
-      ]
-    }
-        
-      }).then((t) => {console.log(t)}).catch((err) => {console.log(err)});
+        method: 'get',
+        url: `https://docs.google.com/forms/d/e/1FAIpQLSftIoOnEJpbRJ0F6NGgGiBNApjRenrC-dUX9JVVivXNak_sRw/viewform?usp=pp_url&entry.1374816860=${firstName}&entry.1327997679=${email}&entry.927585984=${text}`,
+    }).then((t) => {console.log(t)}).catch((err) => {console.log(err)});
     }
   </script>
 </html>
