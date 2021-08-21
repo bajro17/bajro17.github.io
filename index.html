@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
     />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
     <title>Bajro Lisic</title>
   </head>
   <body class="text-gray-800 antialiased">
@@ -217,7 +217,7 @@
                       Work on many small and large projects.<br/>
                       In free time I love to draw nature.
                     </p>
-                    <button click="createIssue()"> Send</button>
+                    <button onclick="createIssue()"> Send</button>
                     
                   </div>
                 </div>
@@ -373,6 +373,7 @@
       </div>
     </footer>
   </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     function toggleNavbar(collapseID) {
       document.getElementById(collapseID).classList.toggle("hidden");
@@ -380,6 +381,7 @@
     }
 
     function createIssue() {
+      console.log("test")
       axios({
         method: 'post',
         url: 'https://api.github.com/repos/bajro17/bajro17.github.io/issues',
